@@ -1,31 +1,5 @@
-// Dataset: sample laptops
-const LAPTOPS = [
-  { id: 101, title: "Apple MacBook Air 13 M1 (2020)", brand: "Apple", price: 799, ramGB: 8, storageGB: 256, storageType: "SSD", cpu: "Apple M1", gpu: "Integrated", condition: "Used - Like New", image: "https://via.placeholder.com/640x480?text=MacBook+Air+M1" },
-  { id: 102, title: "Apple MacBook Pro 14 M2 (2023)", brand: "Apple", price: 1699, ramGB: 16, storageGB: 512, storageType: "SSD", cpu: "Apple M2 Pro", gpu: "Integrated", condition: "New", image: "https://via.placeholder.com/640x480?text=MBP+14+M2" },
-  { id: 103, title: "Dell XPS 13 9310", brand: "Dell", price: 899, ramGB: 16, storageGB: 512, storageType: "SSD", cpu: "Intel Core i7-1165G7", gpu: "Intel Iris Xe", condition: "Used - Good", image: "https://via.placeholder.com/640x480?text=XPS+13" },
-  { id: 104, title: "Dell G15 Gaming", brand: "Dell", price: 1099, ramGB: 16, storageGB: 1000, storageType: "SSD", cpu: "Intel Core i7-12700H", gpu: "NVIDIA RTX 3060", condition: "New", image: "https://via.placeholder.com/640x480?text=Dell+G15" },
-  { id: 105, title: "HP Spectre x360 14", brand: "HP", price: 1199, ramGB: 16, storageGB: 512, storageType: "SSD", cpu: "Intel Core i7-1255U", gpu: "Intel Iris Xe", condition: "New", image: "https://via.placeholder.com/640x480?text=Spectre+x360" },
-  { id: 106, title: "HP Omen 16", brand: "HP", price: 1299, ramGB: 16, storageGB: 1000, storageType: "SSD", cpu: "AMD Ryzen 7 6800H", gpu: "NVIDIA RTX 3070", condition: "Used - Like New", image: "https://via.placeholder.com/640x480?text=Omen+16" },
-  { id: 107, title: "Lenovo ThinkPad X1 Carbon Gen 9", brand: "Lenovo", price: 1099, ramGB: 16, storageGB: 512, storageType: "SSD", cpu: "Intel Core i7-1165G7", gpu: "Intel Iris Xe", condition: "Used - Very Good", image: "https://via.placeholder.com/640x480?text=X1+Carbon" },
-  { id: 108, title: "Lenovo Legion 5 Pro", brand: "Lenovo", price: 1399, ramGB: 32, storageGB: 1000, storageType: "SSD", cpu: "AMD Ryzen 7 6800H", gpu: "NVIDIA RTX 3070 Ti", condition: "New", image: "https://via.placeholder.com/640x480?text=Legion+5+Pro" },
-  { id: 109, title: "ASUS ROG Zephyrus G14", brand: "ASUS", price: 1499, ramGB: 16, storageGB: 1000, storageType: "SSD", cpu: "AMD Ryzen 9 5900HS", gpu: "NVIDIA RTX 3060", condition: "New", image: "https://via.placeholder.com/640x480?text=G14" },
-  { id: 110, title: "ASUS ZenBook 14 OLED", brand: "ASUS", price: 999, ramGB: 16, storageGB: 512, storageType: "SSD", cpu: "Intel Core i7-1260P", gpu: "Intel Iris Xe", condition: "New", image: "https://via.placeholder.com/640x480?text=ZenBook+OLED" },
-  { id: 111, title: "Acer Swift 3", brand: "Acer", price: 649, ramGB: 8, storageGB: 512, storageType: "SSD", cpu: "AMD Ryzen 5 5500U", gpu: "Integrated", condition: "Used - Good", image: "https://via.placeholder.com/640x480?text=Swift+3" },
-  { id: 112, title: "Acer Predator Helios 300", brand: "Acer", price: 1199, ramGB: 16, storageGB: 1000, storageType: "SSD", cpu: "Intel Core i7-11800H", gpu: "NVIDIA RTX 3060", condition: "Used - Like New", image: "https://via.placeholder.com/640x480?text=Helios+300" },
-  { id: 113, title: "MSI GS66 Stealth", brand: "MSI", price: 1599, ramGB: 32, storageGB: 1000, storageType: "SSD", cpu: "Intel Core i7-10870H", gpu: "NVIDIA RTX 3070", condition: "Used - Very Good", image: "https://via.placeholder.com/640x480?text=GS66" },
-  { id: 114, title: "MSI Prestige 14", brand: "MSI", price: 999, ramGB: 16, storageGB: 512, storageType: "SSD", cpu: "Intel Core i7-1185G7", gpu: "Intel Iris Xe", condition: "New", image: "https://via.placeholder.com/640x480?text=Prestige+14" },
-  { id: 115, title: "Razer Blade 15", brand: "Razer", price: 2299, ramGB: 32, storageGB: 1000, storageType: "SSD", cpu: "Intel Core i7-12800H", gpu: "NVIDIA RTX 3080 Ti", condition: "New", image: "https://via.placeholder.com/640x480?text=Blade+15" },
-  { id: 116, title: "Razer Blade 14", brand: "Razer", price: 1999, ramGB: 16, storageGB: 1000, storageType: "SSD", cpu: "AMD Ryzen 9 6900HX", gpu: "NVIDIA RTX 3070 Ti", condition: "Used - Like New", image: "https://via.placeholder.com/640x480?text=Blade+14" },
-  { id: 117, title: "Microsoft Surface Laptop 5", brand: "Microsoft", price: 1299, ramGB: 16, storageGB: 512, storageType: "SSD", cpu: "Intel Core i7-1255U", gpu: "Intel Iris Xe", condition: "New", image: "https://via.placeholder.com/640x480?text=Surface+Laptop+5" },
-  { id: 118, title: "Microsoft Surface Book 3", brand: "Microsoft", price: 1499, ramGB: 32, storageGB: 1000, storageType: "SSD", cpu: "Intel Core i7-1065G7", gpu: "NVIDIA GTX 1660 Ti", condition: "Used - Good", image: "https://via.placeholder.com/640x480?text=Surface+Book+3" },
-  { id: 119, title: "Gigabyte Aero 16", brand: "Gigabyte", price: 1699, ramGB: 16, storageGB: 1000, storageType: "SSD", cpu: "Intel Core i7-12700H", gpu: "NVIDIA RTX 3070 Ti", condition: "New", image: "https://via.placeholder.com/640x480?text=Aero+16" },
-  { id: 120, title: "Huawei MateBook X Pro", brand: "Huawei", price: 1299, ramGB: 16, storageGB: 512, storageType: "SSD", cpu: "Intel Core i7-1260P", gpu: "Intel Iris Xe", condition: "New", image: "https://via.placeholder.com/640x480?text=MateBook+X+Pro" },
-  { id: 121, title: "Samsung Galaxy Book2 Pro", brand: "Samsung", price: 1199, ramGB: 16, storageGB: 512, storageType: "SSD", cpu: "Intel Core i7-1260P", gpu: "Intel Iris Xe", condition: "New", image: "https://via.placeholder.com/640x480?text=Galaxy+Book2+Pro" },
-  { id: 122, title: "Apple MacBook Air 15 M2 (2023)", brand: "Apple", price: 1299, ramGB: 8, storageGB: 256, storageType: "SSD", cpu: "Apple M2", gpu: "Integrated", condition: "New", image: "https://via.placeholder.com/640x480?text=MacBook+Air+15" },
-  { id: 123, title: "Lenovo IdeaPad 3", brand: "Lenovo", price: 449, ramGB: 8, storageGB: 256, storageType: "SSD", cpu: "Intel Core i3-1115G4", gpu: "Integrated", condition: "Used - Fair", image: "https://via.placeholder.com/640x480?text=IdeaPad+3" },
-  { id: 124, title: "HP Pavilion 15", brand: "HP", price: 599, ramGB: 12, storageGB: 512, storageType: "SSD", cpu: "Intel Core i5-1240P", gpu: "Intel Iris Xe", condition: "Used - Good", image: "https://via.placeholder.com/640x480?text=Pavilion+15" },
-  { id: 125, title: "ASUS TUF Gaming F15", brand: "ASUS", price: 899, ramGB: 16, storageGB: 512, storageType: "SSD", cpu: "Intel Core i5-11400H", gpu: "NVIDIA RTX 3050 Ti", condition: "Used - Like New", image: "https://via.placeholder.com/640x480?text=TUF+F15" }
-];
+// Backend API base
+const API_BASE = location.origin.replace(/:\d+$/, ':5174');
 
 // State
 const state = {
@@ -76,11 +50,11 @@ function uniqueSortedNumbers(numbers) {
 }
 
 // Build filters from dataset
-const brands = Array.from(new Set(LAPTOPS.map(l => l.brand))).sort((a, b) => a.localeCompare(b));
-const rams = uniqueSortedNumbers(LAPTOPS.map(l => l.ramGB));
-const storages = uniqueSortedNumbers(LAPTOPS.map(l => l.storageGB));
-const cpus = Array.from(new Set(LAPTOPS.map(l => l.cpu))).sort((a, b) => a.localeCompare(b));
-const gpus = Array.from(new Set(LAPTOPS.map(l => l.gpu))).sort((a, b) => a.localeCompare(b));
+let brands = [];
+let rams = [];
+let storages = [];
+let cpus = [];
+let gpus = [];
 
 function createCheckbox(id, value, labelText, onChange) {
   const wrapper = document.createElement("label");
@@ -118,18 +92,27 @@ function renderFilterGroup(container, items, stateSet) {
   });
 }
 
-function render() {
-  const filtered = applyAllFilters(LAPTOPS);
-  const sorted = sortItems(filtered);
-  const totalItems = sorted.length;
-  const totalPages = Math.max(1, Math.ceil(totalItems / state.pageSize));
+async function render() {
+  const params = new URLSearchParams();
+  if (state.searchQuery) params.set('q', state.searchQuery);
+  if (state.selectedBrands.size) params.set('brand', Array.from(state.selectedBrands).join(','));
+  if (state.selectedRams.size) params.set('ram', Array.from(state.selectedRams).join(','));
+  if (state.selectedStorages.size) params.set('storage', Array.from(state.selectedStorages).join(','));
+  if (state.selectedCpus.size) params.set('cpu', Array.from(state.selectedCpus).join(','));
+  if (state.selectedGpus.size) params.set('gpu', Array.from(state.selectedGpus).join(','));
+  if (state.priceMin != null) params.set('priceMin', String(state.priceMin));
+  if (state.priceMax != null) params.set('priceMax', String(state.priceMax));
+  params.set('sort', state.sortBy);
+  params.set('page', String(state.pageIndex));
+  params.set('pageSize', String(state.pageSize));
+
+  const res = await fetch(`${API_BASE}/api/laptops?${params.toString()}`);
+  const { total, items } = await res.json();
+  const totalPages = Math.max(1, Math.ceil(total / state.pageSize));
   if (state.pageIndex > totalPages) state.pageIndex = totalPages;
 
-  const start = (state.pageIndex - 1) * state.pageSize;
-  const pageItems = sorted.slice(start, start + state.pageSize);
-
-  renderResultsCount(totalItems);
-  renderGrid(pageItems);
+  renderResultsCount(total);
+  renderGrid(items);
   renderPagination(totalPages);
 }
 
@@ -322,12 +305,21 @@ clearFiltersBtn.addEventListener("click", () => {
   render();
 });
 
-// Initial render of filter groups
-renderFilterGroup(brandContainer, brands, state.selectedBrands);
-renderFilterGroup(ramContainer, rams, state.selectedRams);
-renderFilterGroup(storageContainer, storages, state.selectedStorages);
-renderFilterGroup(cpuContainer, cpus, state.selectedCpus);
-renderFilterGroup(gpuContainer, gpus, state.selectedGpus);
+// Initialize filters from API then render first page
+(async function init() {
+  const res = await fetch(`${API_BASE}/api/filters`);
+  const data = await res.json();
+  brands = data.brands || [];
+  rams = data.rams || [];
+  storages = data.storages || [];
+  cpus = data.cpus || [];
+  gpus = data.gpus || [];
 
-// First render
-render();
+  renderFilterGroup(brandContainer, brands, state.selectedBrands);
+  renderFilterGroup(ramContainer, rams, state.selectedRams);
+  renderFilterGroup(storageContainer, storages, state.selectedStorages);
+  renderFilterGroup(cpuContainer, cpus, state.selectedCpus);
+  renderFilterGroup(gpuContainer, gpus, state.selectedGpus);
+
+  render();
+})();
