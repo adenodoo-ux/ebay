@@ -68,11 +68,27 @@
           <div id="filter-gpu" class="filter-group"></div>
         </details>
 
+        <details>
+          <summary>الحالة</summary>
+          <div id="filter-condition" class="filter-group"></div>
+        </details>
+
         <button id="clear-filters" type="button" class="btn secondary clear-btn">مسح الفلاتر</button>
       </aside>
 
       <section class="results" aria-live="polite">
-        <div id="results-count" class="results-count"></div>
+        <div class="results-toolbar">
+          <div id="results-count" class="results-count"></div>
+          <div class="page-size">
+            <label for="page-size-select">حجم الصفحة</label>
+            <select id="page-size-select">
+              <option value="12">12</option>
+              <option value="24">24</option>
+              <option value="48">48</option>
+            </select>
+          </div>
+        </div>
+        <div id="active-filters" class="active-filters" aria-live="polite"></div>
         <div id="grid" class="product-grid"></div>
         <nav id="pagination" class="pagination" aria-label="التنقل بين الصفحات"></nav>
       </section>
