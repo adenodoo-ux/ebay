@@ -3,6 +3,11 @@ import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 
 async function main() {
+  const existing = await prisma.laptop.count()
+  if (existing > 0) {
+    console.log(`[seed] Skipped: ${existing} laptops already present`)
+    return
+  }
   const laptops = [
     { title: 'Apple MacBook Air 13 M1 (2020)', brand: 'Apple', price: 799, ramGB: 8, storageGB: 256, storageType: 'SSD', cpu: 'Apple M1', gpu: 'Integrated', condition: 'Used - Like New', image: 'https://via.placeholder.com/640x480?text=MacBook+Air+M1' },
     { title: 'Apple MacBook Pro 14 M2 (2023)', brand: 'Apple', price: 1699, ramGB: 16, storageGB: 512, storageType: 'SSD', cpu: 'Apple M2 Pro', gpu: 'Integrated', condition: 'New', image: 'https://via.placeholder.com/640x480?text=MBP+14+M2' },
