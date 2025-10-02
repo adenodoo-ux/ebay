@@ -1,6 +1,6 @@
 // API-driven frontend for laptops catalog (RTL)
 
-const API_BASE = location.origin.replace(/:\d+$/, ':5174');
+const API_BASE = location.origin;
 
 const state = {
   searchQuery: '',

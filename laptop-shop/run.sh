@@ -18,19 +18,12 @@ node prisma/seed.js || true
 
 API_LOG=${API_LOG:-/tmp/laptop-api.log}
 
-echo "[run] Starting API on :5174 ..."
+echo "[run] Starting server (API + static) on :5174 ..."
 nohup node server.js > "$API_LOG" 2>&1 &
 API_PID=$!
 echo "$API_PID" > /tmp/laptop-api.pid
 sleep 0.8
 head -n 2 "$API_LOG" || true
 
-if command -v npx >/dev/null 2>&1; then
-  echo "[run] Starting static preview on :5173 ..."
-  npx --yes serve -s "$ROOT_DIR" -l 5173 >/tmp/laptop-web.log 2>&1 &
-  echo $! > /tmp/laptop-web.pid
-fi
-
-echo "[run] API:   http://localhost:5174"
-echo "[run] Web:   http://localhost:5173"
-echo "[run] Logs:  $API_LOG, /tmp/laptop-web.log"
+echo "[run] URL:   http://localhost:5174"
+echo "[run] Logs:  $API_LOG"
